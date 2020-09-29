@@ -61,7 +61,7 @@ function scrape3PA (player) {
             await (await page.$('select[name=PerMode]'))
                 .type('Per 40 Minutes');
     
-            await page.waitForSelector('div.nba-stat-table__overflow');
+            await page.waitForSelector('div.nba-stat-table__overflow table tbody');
             const threePointersAverage = await page.evaluate(() => {
                 const statTables = document.querySelectorAll('div.nba-stat-table__overflow table');
                 let averagesArray = [];
